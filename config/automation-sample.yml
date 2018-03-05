@@ -1,0 +1,30 @@
+---
+automation:
+-
+  action:
+    entity_id: light.green_lamp
+    service: light.turn_on
+  alias: 'Turn on hallway light'
+  trigger:
+    event_type: button_pressed
+    event_data: 1002
+    platform: ZLLSwitch
+-
+  action:
+    entity_id: light.green_lamp
+    service: light.turn_off
+  alias: 'Turn off hallway light'
+  trigger:
+    event_type: button_pressed
+    event_data: 4002
+    platform: ZLLSwitch
+light:
+  lights:
+    - green_lamp
+    - anglepoise
+  platform: Lifx
+sensor:
+  sensors:
+    name: Hallway
+    platform: Hue
+    type: ZLLSwitch

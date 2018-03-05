@@ -1,0 +1,12 @@
+---
+:huefx:
+  :interval:
+:automations:
+- action:
+    entity_id:
+    service:
+  alias:
+  trigger:
+    event_type:
+    event_data:
+    platform:
