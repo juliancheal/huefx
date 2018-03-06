@@ -17,9 +17,9 @@ module Huefx
       @lifx_lights.discover
     end
 
-    def generate_automation
+    def generate_automation(default_config = nil, automation_config = nil)
       automation = Huefx::Automation.new
-      automation.generate
+      automation.generate(default_config, automation_config)
     end
   end
 end
