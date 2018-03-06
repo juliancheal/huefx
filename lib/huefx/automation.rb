@@ -30,13 +30,13 @@ module Huefx
       File.write(automation, automations.to_yaml)
     end
 
-    private
-
-    def load_automation(file)
+    def load_automation(file=AUTOMATION_CONFIG)
       @config_file ||= load_yml(file)
       return unless @config_file
       symbolise(@config_file)
     end
+
+    private
 
     def load_yml(file)
       yml_path = File.expand_path(file)
