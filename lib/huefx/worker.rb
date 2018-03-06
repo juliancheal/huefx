@@ -7,18 +7,16 @@ module Huefx
   class Worker
     def initialize
       load_automations
+      initialize_sensors
+      initalize_lights
     end
 
     def load_automations
-      huefx = Huefx::Automation.new
+      huefx_automation = Huefx::Automation.new
+      huefx            = huefx_automation.load_automation
 
-      @settings    = huefx.settings
-      @automations = huefx.automations
-      @lights      = huefx.lights
-      @sensors     = huefx.sensors
-
-      initialize_sensors
-      initalize_lights
+      @settings    = huefx[:huefx]
+      @automations = huefx[:automations]
     end
 
     def initalize_lights
